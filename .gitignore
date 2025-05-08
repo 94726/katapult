@@ -1,0 +1,14 @@
+node_modules
+*.log*
+.nuxt
+.nitro
+.cache
+.turbo
+.output
+.env
+.vscode
+dist
+.DS_Store
+.idea
+*.pyc
+.pdm-python

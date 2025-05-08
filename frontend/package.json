@@ -1,0 +1,50 @@
+{
+  "name": "solid",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint --max-warnings 0 .",
+    "lint:fix": "npm run lint -- --fix",
+    "preview": "vite preview",
+    "flash": "littlefs-python create ./dist lfs.bin --fs-size=1mb --block-size=4096 && esptool.py write_flash 0x210000 lfs.bin"
+  },
+  "dependencies": {
+    "@corvu/otp-field": "^0.1.4",
+    "@iconify-icon/solid": "^2.3.0",
+    "@iconify-icons/uil": "^1.2.3",
+    "@iconify-json/uil": "^1.2.3",
+    "@iconify/icons-uil": "^1.2.3",
+    "@kobalte/core": "^0.13.9",
+    "@solidjs-use/math": "^2.3.0",
+    "@unocss/reset": "^66.1.0-beta.10",
+    "chart.js": "^4.4.8",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "ofetch": "^1.4.1",
+    "solid-chartjs": "^1.3.11",
+    "solid-js": "^1.9.5",
+    "solid-transition-group": "^0.3.0",
+    "solidjs-use": "^2.3.0",
+    "tailwind-merge": "^3.2.0",
+    "unocss-preset-animations": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@typescript-eslint/parser": "^8.29.1",
+    "@unocss/preset-wind4": "^66.1.0-beta.10",
+    "eslint": "^9.24.0",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-prettier": "^5.2.6",
+    "eslint-plugin-solid": "^0.14.5",
+    "prettier": "^3.5.3",
+    "typescript": "~5.7.2",
+    "unplugin-icons": "^22.1.0",
+    "vite": "^6.2.0",
+    "vite-plugin-compression2": "^1.3.3",
+    "vite-plugin-solid": "^2.11.2"
+  }
+}

@@ -1,0 +1,45 @@
+[project]
+name = "seminararbeit - linac"
+version = "0.1.0"
+description = "Project files of a 'Seminararbeit' involving a linac-model"
+authors = [
+    {name = "", email = ""},
+]
+dependencies = [
+  "fastapi[standard]>=0.115.5",
+  "gpiozero>=2.0.1",
+  "rpi-hardware-pwm>=0.2.2",
+  "lgpio>=0.2.2.0; sys_platform=='linux'",
+  "pytest-xdist>=3.6.1"
+]
+requires-python = "==3.12.*"
+readme = "README.md"
+license = {text = "MIT"}
+
+[dependency-groups]
+dev = [
+    "ruff>=0.8.0",
+    "pytest>=8.3.4",
+    "pytest-asyncio>=0.25.1",
+    "pytest-watch>=4.2.0",
+]
+
+[tool.pdm]
+distribution = false
+
+[tool.pdm.scripts]
+dev = "fastapi dev --host 0.0.0.0 --port 8080"
+start = "fastapi run --port 8080"
+lint = "ruff check"
+"lint:fix" = "ruff check --fix"
+"test:watch" = "pytest --looponfail --color=yes -s"
+"test" = "pytest"
+format = "ruff format"
+style.composite = ["format", "lint:fix"]
+
+[tool.ruff.format]
+quote-style = "single"
+
+[tool.pytest.ini_options]
+asyncio_default_fixture_loop_scope = "function"
+

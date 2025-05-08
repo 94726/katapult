@@ -1,0 +1,19 @@
+[build]
+incremental = true
+rustc-wrapper = "sccache"
+target = "xtensa-esp32s3-espidf"
+
+[target.xtensa-esp32s3-espidf]
+linker = "ldproxy"
+runner = "espflash flash --monitor"
+rustflags = [ "--cfg",  "espidf_time64"]
+
+[unstable]
+build-std = ["std", "panic_abort"]
+
+[env]
+MCU="esp32s3"
+ESP_IDF_VERSION = "v5.2.3"
+WIFI_SSID="Katapult"
+WIFI_PASS="12345678"
+

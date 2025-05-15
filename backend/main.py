@@ -21,8 +21,9 @@ SERVO_PIN = 18
 MAGNET_POSITION_ANGLE = 45
 target_angle = 45
 
-# SERVO_FULL_OPEN_TIME = 0.2 # seconds
-SERVO_PROJECTILE_RELEASE_TIME = 0.15 # seconds that the projectile roughly takes to leave the compartment once servo starts opening
+# seconds that the projectile roughly takes to leave the compartment once servo starts opening
+SERVO_PROJECTILE_RELEASE_TIME = 0.0350234 # T = 0.16287
+
 
 ws_manager = WebsocketManager()
 
